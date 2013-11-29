@@ -1,4 +1,4 @@
 edu-dev
 =======
 
-Edu Development
+Edu Development Tryton
