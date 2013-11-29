@@ -1,0 +1,133 @@
+<!-- This file is part of Tryton.  The COPYRIGHT file at the top level of
+this repository contains the full copyright notices and license terms. -->
+<tryton>
+    <data>
+
+        <record model="ir.ui.view" id="student_view_form">
+            <field name="model">op.student</field>
+            <field name="type">form</field>
+            <field name="name">student_form</field>
+        </record>
+        <record model="ir.ui.view" id="student_view_tree">
+            <field name="model">op.student</field>
+            <field name="type">tree</field>
+            <field name="name">student_tree</field>
+        </record>
+        
+        <record model="ir.ui.view" id="course_view_form">
+            <field name="model">op.course</field>
+            <field name="type">form</field>
+            <field name="name">course_form</field>
+        </record>
+        <record model="ir.ui.view" id="course_view_tree">
+            <field name="model">op.course</field>
+            <field name="type">tree</field>
+            <field name="name">course_tree</field>
+        </record>
+        
+        <record model="ir.ui.view" id="distribution_view_form">
+            <field name="model">op.distribution</field>
+            <field name="type">form</field>
+            <field name="name">distribution_form</field>
+        </record>        
+        <record model="ir.ui.view" id="distribution_view_tree">
+            <field name="model">op.distribution</field>
+            <field name="type">tree</field>
+            <field name="name">distribution_tree</field>
+        </record>
+        
+        <record model="ir.ui.view" id="grade_sheet_view_form">
+            <field name="model">op.grade.sheet</field>
+            <field name="type">form</field>
+            <field name="name">grade_sheet_form</field>
+        </record>
+        <record model="ir.ui.view" id="grade_sheet_view_tree">
+            <field name="model">op.grade.sheet</field>
+            <field name="type">tree</field>
+            <field name="name">grade_sheet_tree</field>
+        </record>
+        
+        <record model="ir.ui.view" id="student_score_view_form">
+            <field name="model">op.student-op.distribution</field>
+            <field name="type">form</field>
+            <field name="name">student_score_form</field>
+        </record>
+        <record model="ir.ui.view" id="student_score_view_tree">
+            <field name="model">op.student-op.distribution</field>
+            <field name="type">tree</field>
+            <field name="name">student_score_tree</field>
+        </record>
+        
+        <record model="ir.action.act_window" id="student_action">
+            <field name="name">Student</field>
+            <field name="res_model">op.student</field>
+        </record>
+        <record model="ir.action.act_window.view" id="act_student_list_view">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="student_view_tree"/>
+            <field name="act_window" ref="student_action"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_student_form_view">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="student_view_form"/>
+            <field name="act_window" ref="student_action"/>
+        </record>
+        
+        <record model="ir.action.act_window" id="course_action">
+            <field name="name">Course</field>
+            <field name="res_model">op.course</field>
+        </record>
+        <record model="ir.action.act_window.view" id="act_course_list_view">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="course_view_tree"/>
+            <field name="act_window" ref="course_action"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_course_form_view">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="course_view_form"/>
+            <field name="act_window" ref="course_action"/>
+        </record>
+        
+        <record model="ir.action.act_window" id="dist_action">
+            <field name="name">Distributions</field>
+            <field name="res_model">op.distribution</field>
+        </record>
+        <record model="ir.action.act_window.view" id="act_distribution_list_view">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="distribution_view_tree"/>
+            <field name="act_window" ref="dist_action"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_distribution_form_view">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="distribution_view_form"/>
+            <field name="act_window" ref="dist_action"/>
+        </record>
+        
+        <record model="ir.action.act_window" id="grade_sheet_action">
+            <field name="name">Grade Sheet</field>
+            <field name="res_model">op.grade.sheet</field>
+        </record>
+        <record model="ir.action.act_window.view" id="act_grade_sheet_tree_view">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="grade_sheet_view_tree"/>
+            <field name="act_window" ref="grade_sheet_action"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_grade_sheet_form_view">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="grade_sheet_view_form"/>
+            <field name="act_window" ref="grade_sheet_action"/>
+        </record>
+
+        <menuitem name="Education" id="education_menu" />
+        
+        <menuitem action="student_action" id="student_menu"
+            parent="education_menu" sequence="10"/>
+        <menuitem action="course_action" id="course_menu"
+            parent="education_menu" sequence="20"/>
+        <menuitem action="dist_action" id="distribution_menu"
+            parent="education_menu" sequence="30"/>
+        <menuitem action="grade_sheet_action" id="grade_sheet_menu"
+            parent="education_menu" sequence="40"/>
+
+    </data>
+</tryton>

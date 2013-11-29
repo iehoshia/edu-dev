@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!-- This file is part of Tryton.  The COPYRIGHT file at the top level of
+this repository contains the full copyright notices and license terms. -->
+<form string="Student" col="6">
+    <label name="firstname"/>
+    <field name="firstname"/>
+    <label name="lastname"/>
+    <field name="lastname"/>
+    <label name="major"/>
+    <field name="major"/>
+    <field name="courses" colspan="6" />
+</form>
